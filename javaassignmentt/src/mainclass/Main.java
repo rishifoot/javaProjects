@@ -1,4 +1,4 @@
-package javaassignmentt;
+package mainclass;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,6 +35,7 @@ public class Main {
 			
 			 String newDVal = formatter.format(cost);
 			System.out.println(" cost of carInsurance is "+newDVal);
+			System.out.println(" Do you want to continue y/n ");
 			String si=scan.next();
 			ans=si;
 		}while(ans.equals("y"));
@@ -43,3 +44,4 @@ public class Main {
 	}
 
 }
+ 
