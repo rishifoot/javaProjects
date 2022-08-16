@@ -1,0 +1,15 @@
+.back_color {
+    text-align: center;
+    background-color:aquamarine(0,255,195);
+  }
+  
+  
+  .border_cend {
+    border: 0px solid rgb(0, 255, 195);
+    border-width: 0 3px 0 0;
+  }
+  
+  .border_cstart {
+    border: 0px solid rgb(0, 255, 195);
+    border-width: 0px 0px 0px 3px;
+  }
