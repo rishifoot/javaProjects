@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<tx:annotation-driven />
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- com.nagarro.library.entity.User -->
+	<bean class="com.nagarro.library.entity.User" name="user"></bean>
+
+	<!-- org.springframework.jdbc.datasource.DriverManagerDataSource -->
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		name="dataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mydb" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<!-- org.springframework.orm.hibernate4.LocalSessionFactoryBean -->
+	<bean
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		name="sessionFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>
+					com.nagarro.library.entity.User
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- org.springframework.orm.hibernate4.HibernateTemplate -->
+	<bean class="org.springframework.orm.hibernate4.HibernateTemplate"
+		name="hibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- org.springframework.orm.hibernate4.HibernateTransactionManager -->
+	<bean
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		name="transactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

@@ -1,0 +1,27 @@
+.pop-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    background: #0000006f;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.show-pop-up {
+    display: flex;
+}
+
+/* Add Form */
+.add-form form {
+    background: #ffffff;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+}
+.add-form td:last-child {
+    width: 25rem;
+    padding: .5rem 3rem;
+}

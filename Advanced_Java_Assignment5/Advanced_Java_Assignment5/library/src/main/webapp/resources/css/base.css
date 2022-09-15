@@ -1,0 +1,154 @@
+:root {
+    --theme-color-1: #ffffff;
+    --theme-color-2: #a931ff;
+    --theme-color-3: #000000;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+    background-color: var(--theme-color-2);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.nav-content {
+    width: 100%;
+    text-align: center;
+    margin: 0 1rem;
+}
+.nav-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--theme-color-1);
+    font-weight: 600;
+    text-shadow: 0 .5rem .3rem var(--theme-color-3);
+}
+.nav-option {
+    float: right;
+    font-size: 1.2rem;
+    color: var(--theme-color-1);
+    position: absolute;
+    right: 0;
+    margin-right: 1rem;
+}
+.btn {
+    padding: .4rem;
+    border: none;
+    font-weight: 600;
+    border-radius: .2rem;
+    color: var(--theme-color-1);
+    box-shadow: .1rem .1rem .1rem #fffa inset,
+                -.1rem -.1rem .1rem #000a inset;
+}
+.btn:active {
+    box-shadow: .1rem .1rem .1rem #000a inset,
+                -.1rem -.1rem .1rem #fffa inset;
+}
+.btn-logout {
+    background: #ff0000;
+}
+.btn-logout:hover {
+    background: #dd0000;
+}
+.btn-info {
+    background: #0000ff;
+}
+.btn-info:hover {
+    background: #0000dd;
+}
+.btn-login {
+    background: #00aa00;
+}
+.btn-login:hover {
+    background: #008800;
+}
+.header {
+    margin: 2rem 0rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.main {
+    display: flex;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    flex-direction: column;
+}
+.j-left {
+    justify-content: left;
+}
+.p-right {
+    position: absolute;
+    right: 1rem;
+}
+.login-form {
+    width: 40%;
+    height: 30%;
+}
+.login-form fieldset {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-color: var(--theme-color-2);
+    border-radius: .2rem;
+}
+.login-form fieldset legend {
+    color: var(--theme-color-2);
+    padding: 0rem .2rem;
+}
+.login-form fieldset div {
+    height: 33.3333%;
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+.field-container > label {
+    width: 30%;
+}
+.field-container > input {
+    width: 70%;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+.input-field {
+    padding: .3rem;
+}
+.footer {
+    height: 5vh;
+    background-color: var(--theme-color-2);
+    color: var(--theme-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list-view {
+    width: 95%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+.list-view > * > tr > * {
+    border: 1px solid var(--theme-color-3);
+    width: 20%;
+    height: 2.5rem;
+    min-height: max-content;
+    padding: .2rem;
+    text-align: center;
+}
+.w-50 {
+    width: calc(50% - .2rem)
+}
+.w-100 {
+    width: 100%;
+}
