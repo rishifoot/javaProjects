@@ -1,0 +1,32 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+      <h2>Add New Result</h2>
+      <div class="d-flex">
+        <a class="btn btn-danger" routerLink="../teacher">Back</a>
+    </div>
+
+  </div>
+</nav>
+<div class="col-md-6 offset-md-3">
+<form [formGroup]="addStudent" (ngSubmit)="collectData()" style="margin:auto;width:220px;">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Roll No</label>
+      <input type="text" class="form-control"   placeholder="Enter Roll No" formControlName="RollNo">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Name</label>
+      <input type="text" class="form-control"  placeholder="Enter Name" formControlName="Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">DOB</label>
+      <input type="text" class="form-control"  placeholder="Enter Dob" formControlName="Dob">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Score</label>
+      <input type="text" class="form-control"  placeholder="Enter score" formControlName="score">
+    </div>
+    <br><br>
+   <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
