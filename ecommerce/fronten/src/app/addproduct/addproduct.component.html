@@ -1,0 +1,48 @@
+
+<div class="container-fluid">
+    <div class="col-sm-6">
+        <!--form tag starting -->
+        <form class="form-horizontal" name="myform" >
+            <div class="form-group">
+                <label class="control-label col-sm-3" id="productName" for="productName">Product Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="rolproductNameno" name="productName" required [(ngModel)]="product.productName">
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <label class="control-label col-sm-3" id="code" for="name">Code</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="code" name="code" required [(ngModel)]="product.code">
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <label class="control-label col-sm-3" id="code" for="name">Price</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="code" name="code" required [(ngModel)]="product.price">
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <label class="control-label col-sm-3" id="code" for="name">Description</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="code" name="code" required [(ngModel)]="product.description">
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <label class="control-label col-sm-3" id="brand" for="img">Brand</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="brand" name="brandName" required  [(ngModel)]="product.brandName" >
+                </div>
+            </div>
+            <div class="buttn1">
+                <!--Button -->
+                <div class="col-auto">
+                    <input (click)="addproduct()" type="submit"  id="bt" class="btn btn-info" value="Submit" />
+                </div>
+            </div>
+        </form>  <!--Form tag ending--> 
+    </div>
+</div>  

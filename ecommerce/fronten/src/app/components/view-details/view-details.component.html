@@ -1,0 +1,37 @@
+<table class="table container mt-4 border">
+    <thead>
+      <tr class="bg-info text-dark">
+        <!--<th scope="col"></th>-->
+        <th scope="col">Id</th>
+       <th scope="col">Brand Name</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+        <th scope="col">Details</th>
+        <th scope="col">Serviceavailibility</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+        <th>{{item.productId}}</th>
+        <th>{{item.productBrand}}</th>
+        <th>{{item.productName}}</th>
+        <th>{{item.productCode}}</th>
+        <th>{{item.price}}</th>
+        <th><img src="{{item.image}}" height="100" width="100"class="img"></th>
+        <th>
+          <button *ngIf="userService.isLoggedIn()" routerLink="/info/{{item.productId}}" type="button"  class="btn btn-outline-success">Info</button>
+          <!-- <a *ngIf="userService.isLoggedIn()" routerLink="/info/{{item.productId}}"><span>Info</span></a> -->
+      </th>
+      <th>
+        <button  *ngIf="userService.isLoggedIn()"  type="button" routerLink="/checkser/{{item.productId}}" class="btn btn-outline-danger">Service</button>
+      </th>
+
+        
+        
+        
+      </tr></tbody></table>
+
+      

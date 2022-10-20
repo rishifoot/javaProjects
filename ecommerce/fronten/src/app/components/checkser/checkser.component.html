@@ -1,0 +1,33 @@
+<div ngNativeValidate class="container">
+    <div class="row">
+        <div class="col-lg-9 col-sm-12 col-xs-12 mt-5">
+        <input type="text" placeholder="Enter Pincode" class="form-control" name="pincode" [(ngModel)]="pincode" required>
+    </div>
+    <div class="col-lg- col-sm-12 col-xs-12">
+    
+        <button type="botton" class="btn btn-info mt-2" (click)="searchByServicePincode()">Search  </button>
+    </div></div>
+   
+    <table class="table container mt-4 border" *ngIf="service">
+        <thead>
+         
+          <tr class="bg-info text-dark">
+           <th scope="col">Pincode</th>
+            <th scope="col">Delivery</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+         
+        <tbody class="container" >
+           
+          <tr *ngFor="let item of service">
+     
+            <th>{{item.pincode}}</th>
+            <th>Delivered in {{item.expectedDelivery}} days</th>
+            
+        
+       
+    
+</tr></tbody>
+ <div class="text-danger bold">{{message}}</div>
+    

@@ -1,0 +1,35 @@
+<mat-toolbar class="navbar">
+  <div class="f">Welcome</div>
+  
+  <div>
+   
+  <a *ngIf="!userService.isLoggedIn()" routerLink="login"><span>Login</span></a>
+  
+  <a *ngIf="userService.isLoggedIn()"  routerLink="view-products"><span>Products</span></a>
+  <a *ngIf="!userService.isLoggedIn()" routerLink="register"><span>Register</span></a>
+  <!-- <a *ngIf="userService.isAdmin()" routerLink="approve"><span>Approve</span></a> -->
+  <!-- <a *ngIf="userService.isLoggedIn()" routerLink="search"><span>Search</span></a> -->
+  <a *ngIf="userService.isLoggedIn()" routerLink="search"><span>ProductName</span></a>
+  <a *ngIf="userService.isLoggedIn()" routerLink="searchid"><span>ProductCode</span></a>
+  <a *ngIf="userService.isLoggedIn()" routerLink="searchbrand"><span>ProductBrand</span></a>
+  <a *ngIf="userService.isLoggedIn()" (click)="logout()" routerLink="login"><span>Logout</span></a>
+</div>
+
+
+</mat-toolbar> 
+
+<!-- <div class="search">
+  <a *ngIf="userService.isLoggedIn()" routerLink="search"><span>SearchName</span></a>
+  <a *ngIf="userService.isLoggedIn()" routerLink="searchid"><span>SearchId</span></a>
+  <a *ngIf="userService.isLoggedIn()" routerLink="searchbrand"><span>SearchbyBrand</span></a>
+   <a *ngIf="userService.isLoggedIn()" routerLink="info"><span>info</span></a> 
+</div> -->
+<router-outlet></router-outlet>
+<br><br>
+<footer>
+  <div class="icon">
+  <i class="fa fa-users" aria-hidden="true"></i> {{noOfUser}}&nbsp; &nbsp; &nbsp;
+  <i class='fas fa-tv'></i> {{noOfProducts}}&nbsp; &nbsp; &nbsp;
+  <!-- <i class="fa fa-commenting" aria-hidden="true"></i> {{noOfReviews}} -->
+  </div>
+</footer>

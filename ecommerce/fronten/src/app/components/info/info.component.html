@@ -1,0 +1,25 @@
+
+
+ <table class="table container mt-4 border">
+    <thead>
+      <tr class="bg-info text-dark">
+        <!--<th scope="col"></th>-->
+        <th scope="col">Id</th>
+       <th scope="col">Brand Name</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+        
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">
+        <th>{{item.productId}}</th>
+        <th>{{item.productBrand}}</th>
+        <th>{{item.productName}}</th>
+        <th>{{item.productCode}}</th>
+        <th>{{item.price}}</th>
+        <th><img src="{{item.image}}" height="100" width="100" class="img"></th>
+      </tr></tbody></table>  -->

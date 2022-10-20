@@ -1,0 +1,33 @@
+<div ngNativeValidate class="container">
+    <div class="row">
+        <div class="col-lg-9 col-sm-12 col-xs-12 mt-5">
+        <input type="text" placeholder="Enter Product Code" class="form-control" name="productCode" [(ngModel)]="productCode" required>
+    </div>
+    <div class="col-lg- col-sm-12 col-xs-12">
+    
+        <button type="botton" class="btn btn-info mt-2" (click)="searchByproductCode()">Search  </button>
+    </div></div>
+   
+    <table class="table container mt-4 border" *ngIf="Id">
+        <thead>
+         
+          <tr class="bg-info text-dark">
+            <!--<th scope="col"></th>-->
+           <th scope="col">Brand Name</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Image</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+         
+        <tbody class="container" >
+           
+          <tr *ngFor="let item of Id">
+     
+            <th>{{item.productBrand}}</th>
+            <th>{{item.productName}}</th>
+            <th><img src="{{item.image}}" height="100" width="100" class="img"></th>
+        
+       
+          </tr></tbody>
+ <div class="text-danger bold">{{message}}</div>

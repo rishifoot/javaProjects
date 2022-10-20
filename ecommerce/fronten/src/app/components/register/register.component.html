@@ -1,0 +1,35 @@
+<!-- Register Component -->
+<div class="card-body">
+        <form  >
+            <div class="form-group">
+                <label  class="control-label col-sm-3" for="firstName">First Name</label>
+                <div class="col-sm-6">
+                    <input type="text"  name="firstName"  class="form-control" [(ngModel)]="user.firstName"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="lastName">Last Name</label>
+                <div class="col-sm-6">
+                    <input type="text" name="lastName"  class="form-control"   [(ngModel)]="user.lastName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="username">Username</label>
+                 <div class="col-sm-6">
+                <input type="text"   name="username"   class="form-control"  [(ngModel)]="user.username"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="password">Password</label>
+                <div class="col-sm-6">
+                <input type="password" name="password"   class="form-control"  [(ngModel)]="user.password" />
+                </div>
+            </div>
+            {{message}}
+            <br>
+            <div class="form-group">
+                <button type="submit" (click)="formSubmit()" class="btn btn-info">Register</button>
+                
+            </div>
+        </form>
+    </div>
