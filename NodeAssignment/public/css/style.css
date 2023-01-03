@@ -1,0 +1,66 @@
+
+.header{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #4E9F3D;
+    border-bottom: 1px solid #4E9F3D;
+    background-color:#CDF3A2;
+}
+.header h3{
+    margin:1rem;
+    font-weight: bold;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top:4rem;
+    justify-content: space-between 2rem;
+}
+.button-container button{
+   border-radius: 10px;
+   margin:1rem;
+   width:8rem;
+}
+.main-body h4{
+    margin-top:6rem;
+    text-align: center;
+}
+
+.my-for{
+    margin-top: 4rem;
+}
+
+.my-for button{
+   border-radius: 10px;
+   margin-top:1rem;
+   margin-right: 1rem;
+   width:8rem;
+}
+.my-for h3{
+    margin-right: 20rem;
+    text-align:center;
+}
+.my-cont{
+    width:70%;
+    margin-top:5rem;
+}
+
+.record{
+    margin-top:3rem;
+    position: absolute;
+    right: 0;
+    margin-right: 10rem;
+    
+}
+
+.but button{
+    margin-top: 0.9rem;
+    position: absolute;
+    right: 0;
+    margin-right: 4rem;
+    
+    
+ }
+
+  

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../views/header'); %>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/b173b55d12.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Teacher Dashboard: Result-Management-System</title>
+  </head>
+  <body>
+    <%- include('../views/logut-header'); %>
+    <form class="container contain" action="/new-result">
+      <button 
+        type="submit"
+        style="border-radius: 10px"
+        class="record btn btn-primary"
+      >
+        Add Record
+      </button>
+    </form>
+    <div class="my-cont container">
+      <h4>Total Students</h4>
+      <br />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Roll No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Score</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% function convert(str) { var date = new Date(str); mnth = ("0" +
+          (date.getMonth() + 1)).slice(-2); day = ("0" +
+          date.getDate()).slice(-2); str = [date.getFullYear(), mnth,
+          day].join("-"); return str; } %> <% for(var i=0; i < results.length;
+          i++) { %>
+          <tr>
+            <th scope="row"><%=i + 1%></th>
+            <td id="rollno"><%= results[i].studentRollNo%></td>
+            <td id="name"><%= results[i].studentName %></td>
+            <td id="dob"><%= convert(results[i].dateOfBirth)%></td>
+            <td id="score"><%= results[i].score%></td>
+            <td class="td">
+              <a style="margin-right:5px;" href="/update/<%=results[i].studentRollNo%>"
+                ><i class="fa-solid fa-pen-to-square"></i
+              ></a>
+              <a href="/delete/<%=results[i].studentRollNo%>"
+                ><i class="fa-solid fa-trash-can"></i
+              ></a>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

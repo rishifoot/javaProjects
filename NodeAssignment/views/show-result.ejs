@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <%- include('../views/header'); %>
+    <title>Result Management System</title>
+</head>
+<body>
+    <%- include('../views/logut-header'); %>
+    <div class="container">
+        <h4>Result</h4><br>
+        <% function convert(str) { var date = new Date(str); mnth = ("0" +
+          (date.getMonth() + 1)).slice(-2); day = ("0" +
+          date.getDate()).slice(-2); str = [date.getFullYear(), mnth,
+          day].join("-"); return str; } %>
+          <div class="flex">
+            <p><b>Name : </b></p>
+            <p><%=result.studentName%></p>
+          </div>
+         <div class="flex">
+            <p><b>Roll No : </b></p>
+            <p><%=result.studentRollNo%></p>
+         </div>
+        <div class="flex">
+            <p><b>DOB :</b></p>
+            <p><%=convert(result.dateOfBirth)%></p>
+        </div>
+
+        <div class="flex">
+            
+         <p><b>Score:</b></p>
+         <p><%=result.score%></p>
+        </div>
+        
+    </div>
+</body>
+<style>
+    body{
+        text-align:center;
+    }
+    .container{
+        margin-top: 100px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .flex{
+        display:flex;
+        flex-direction:row;
+        column-gap: 1.4rem;
+        margin-left: 30rem;
+    }
+</style>

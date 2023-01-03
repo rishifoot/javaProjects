@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <!-- Required meta tags -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <%- include('../views/logut-header'); %>
+       <!-- Fonts -->
+       <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+       <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+   
+       <link rel="icon" href="Favicon.png">
+       <link rel="stylesheet" href="../public/css/style.css" type="text/css">
+       <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Result Management System</title>
+</head>
+<body>
+    <div class=" my-container container">
+        <br><br>
+        <div class="link">
+            <a href="/teacher-dashboard">Back</a>
+        </div>
+        <form class="my-for"name="my-for"  action="/update-existing-result" method="post">
+          
+            <div class="container">
+                <h3>Update Result</h3>  
+            </div>
+           
+            <br>                 
+            <div class="form-group row">
+                <label for="email_address" class="col-md-4 col-form-label text-md-right">Roll No</label>
+                <div class="col-md-6">
+                    <input type="text" id="rollno" class="form-control" name="rollno" value="<%=result.studentRollNo%>">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="user_name" class="col-md-4 col-form-label text-md-right">Name</label>
+                <div class="col-md-6">
+                    <input type="text" id="name" class="form-control" name="name"value="<%= result.studentName %>" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dob" class="col-md-4 col-form-label text-md-right">Date of Birth</label>
+                <div class="col-md-6">
+                    <% function convert(str) { var date = new Date(str); mnth = ("0" +
+                    (date.getMonth() + 1)).slice(-2); day = ("0" +
+                    date.getDate()).slice(-2); str = [date.getFullYear(), mnth,
+                    day].join("-"); return str; } %>
+                    <input type="text" id="dob" class="form-control" name="dob" value="<%= convert(result.dateOfBirth)%>" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="score" class="col-md-4 col-form-label text-md-right">Score</label>
+                <div class="col-md-6">
+                    <input type="text" id="score" class="form-control" name="score" value="<%=result.score%>" required>
+                </div>
+            </div>
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                    Submit
+                    </button>
+                    <button style="color: black;background-color:white;border: 1px solid black;" type="button" class="btn btn-primary">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
